@@ -128,8 +128,10 @@ function old_quad(){
 }
 
 function solved1(solvedone){//提示
+	var tobeing = localStorage.getItem("tobeing");
 	var this_game = this_order[this_quad];
-
+	var key = this_game;
+	
 	id_array.push(this_game); // save the quad
 	this_quad++;
 	quad_all_prev = quad_all; quad_prev = quad_c;  
@@ -143,15 +145,15 @@ function solved1(solvedone){//提示
 		status1 = 4;
 	}
 	localStorage.removeItem("tobeing");
-	var key = this_game;
+	
 	if(checkValue == "false"){
 		var notesArray = getNotesArray_563();
 		notesArray.push(key);
-		localStorage.setItem("notesArray_563", JSON.stringify(notesArray));
+		if(!tobeing) localStorage.setItem("notesArray_563", JSON.stringify(notesArray));
 	}else{
 		var notesArray = getNotesArray();
 		notesArray.push(key);
-		localStorage.setItem("notesArray", JSON.stringify(notesArray));
+		if(!tobeing) localStorage.setItem("notesArray", JSON.stringify(notesArray));
 	}
 	new_quad();
 	game_draw(0);
