@@ -579,7 +579,9 @@ function inputClick(){
     var isChecked = document.getElementById("checkbox").checked;
     document.getElementById("checkbox").checked = isChecked;
     localStorage.setItem("checkbox",isChecked);
-    location.reload();
+	localStorage.removeItem("tobeing");
+	start_game();
+    //location.reload();
 }
 
 
