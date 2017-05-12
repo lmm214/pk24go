@@ -1,7 +1,5 @@
 window.addEventListener('load', function() {FastClick.attach(document.body);}, false);
 
-var checkValue = localStorage.getItem("checkbox");
-
 var localSolved = localStorage.getItem("localSolved");
 if(localSolved > 0 ){
 	var solved = localSolved,unsolved = 1362-localSolved;
@@ -30,11 +28,9 @@ var ep = 0.000001;
 
 function new_quad(){
 	var this_game = this_order[this_quad];
-	//if(checkValue == "false"){
-	//	quad_all = grab_quad_sol_563(this_game);
-	//}else{
-		quad_all = grab_quad_sol(this_game);
-	//}
+	var checkValue = localStorage.getItem("checkbox");
+	quad_all = grab_quad_sol(this_game);
+
 	localStorage.setItem("notes_game",this_game);
 	localStorage.setItem("notes_all",quad_all);
 	
@@ -80,6 +76,7 @@ function getNotesArray_563() {
 }
 
 function old_quad(){
+	var checkValue = localStorage.getItem("checkbox");
 	if(checkValue == "false"){
 		var notesArray = getNotesArray_563();
 	}else{
@@ -103,11 +100,8 @@ function old_quad(){
 	}
 	id_array.push(this_game);
 
-	//if(checkValue == "false"){
-	//	quad_all = grab_quad_sol_563(this_game);
-	//}else{
-		quad_all = grab_quad_sol(this_game);
-	//}
+
+	quad_all = grab_quad_sol(this_game);
 
 	localStorage.setItem("notes_all",quad_all);
 
@@ -160,7 +154,7 @@ function solved1(solvedone){//提示
 }
 
 function solved2(solvedone){ //正常解决
-	//var checkValue = localStorage.getItem("checkbox");
+	var checkValue = localStorage.getItem("checkbox");
 	var tobeing = localStorage.getItem("tobeing");
 	if(tobeing == 1){
 		//移除待解题组
@@ -220,6 +214,7 @@ function calc(num1, op1, num2){	// caucluate num1 (op1) num2
 
 function game_order(){ // pick up the order of games
 	var TOTAL_GAME = 1362;
+	var checkValue = localStorage.getItem("checkbox");
 	if(checkValue == "false") TOTAL_GAME = 562;
 	var final_order = new Array();
 	var listall = new Array();
@@ -237,6 +232,7 @@ function game_order(){ // pick up the order of games
 
 function grab_quad_sol(this_id){
 	var res = new Array();
+	var checkValue = localStorage.getItem("checkbox");
 	if(checkValue == "false"){
 		var pos = the_location_563[this_id];
 		//var pos = the_location[this_id];
@@ -448,7 +444,8 @@ function game_draw(isclock){
 
 	draw_rect(rect_skip ,  "#fff", 0, "#999");
 	draw_text_center(rect_skip, "提 示", "#999", Math.round(rect_skip[2]/5) +"px sans-serif");
-
+	
+	var checkValue = localStorage.getItem("checkbox");
 	if(checkValue == "false"){
 		var notesArray = getNotesArray_563();
 	}else{
