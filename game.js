@@ -580,7 +580,7 @@ function inputClick(){
     document.getElementById("checkbox").checked = isChecked;
     localStorage.setItem("checkbox",isChecked);
 	localStorage.removeItem("tobeing");
-	start_game();
+	game_draw(0);
     //location.reload();
 }
 
