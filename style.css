@@ -3,7 +3,8 @@ body{font-family:-apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neu
 canvas:focus{outline:0;}
 #page_body{margin-top:0.2rem;}
 #canvasID{display:block;margin:0 auto;overflow:hidden;}
-#div_radio{margin:2rem auto 0;text-align:center;color:#aaa;font-size:0.7rem;}
+#canvasID p.grade{color: #366092;}
+#div_radio{line-height: 8px;text-align:center;color:#aaa;font-size:0.7rem;position:fixed;bottom:5px;left:50%;margin-left:-60px;}
 label{display:block;vertical-align:middle;}label,input,select {vertical-align:middle;}
 .mui-switch{width:3rem;height:1.5rem;position:relative;border:1px solid #dfdfdf;background-color:#eee;box-shadow:#dfdfdf 0 0 0 0 inset;background-clip:content-box;display:inline-block;-webkit-appearance:none;user-select:none;outline:none;}
 .mui-switch,.mui-switch:before{border-radius:1.5rem;border-top-left-radius:1.5rem;border-top-right-radius:1.5rem;border-bottom-left-radius:1.5rem;border-bottom-right-radius:1.5rem;
